@@ -28,7 +28,10 @@ def add_box_token(input_string):
     return final_string
 
 # ========== pipeline 加载 ==========
-pipe = pipeline("image-text-to-text", model="microsoft/GUI-Actor-3B-Qwen2.5-VL")
+# 使用本地路径加载模型
+# 请确保你的脚本和模型目录（GUI-Actor-2B-Qwen2-VL）在同一个目录下
+local_model_path = "./GUI-Actor-2B-Qwen2-VL"
+pipe = pipeline("image-text-to-text", model=local_model_path)
 
 # ========== 初始化 messages ==========
 messages = [
